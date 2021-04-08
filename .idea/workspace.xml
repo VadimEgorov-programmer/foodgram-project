@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b99910a4-20bd-47d3-9656-3e32e6cfd8ce" name="Default Changelist" comment="" />
+    <list default="true" id="b99910a4-20bd-47d3-9656-3e32e6cfd8ce" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,10 +12,27 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2584">
+              <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
   </component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
@@ -35,6 +55,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -42,25 +63,14 @@
               <item name="foodgram-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="foodgram-project" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="foodgram-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="foodgram-project" type="462c0819:PsiDirectoryNode" />
-              <item name="foodgram" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="foodgram-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="foodgram-project" type="462c0819:PsiDirectoryNode" />
-              <item name="foodgram" type="462c0819:PsiDirectoryNode" />
-              <item name="foodgram" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -91,8 +101,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="411" y="168" width="1812" height="1177" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24971814" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24971814" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -105,7 +116,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Pylint" order="8" />
       <window_info anchor="bottom" id="Mypy" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32950193" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32950193" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -124,6 +135,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/foodgram/foodgram/urls.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2584">
+          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
