@@ -1,13 +1,10 @@
-from django.contrib.messages.views import SuccessMessageMixin
-from django.urls import reverse_lazy
 from django.views.generic import CreateView
+from django.urls import reverse_lazy
 
-from .forms import CreationForm
+from .forms import UserRegistrationForm
 
 
-class SignUp(SuccessMessageMixin, CreateView):
-    form_class = CreationForm
-    success_url = reverse_lazy('login')
-    success_message = 'Успех!'
-    template_name = 'users/reg.html'
-
+class SignUp(CreateView):
+    form_class = UserRegistrationForm
+    success_url = reverse_lazy('recipes:index')
+    template_name = 'registration/signup.html'
