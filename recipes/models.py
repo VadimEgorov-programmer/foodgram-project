@@ -14,7 +14,7 @@ class Ingredient(models.Model):
         verbose_name_plural = 'Ингредиенты'
 
     @classmethod
-    def fields(cls, ingredients):
+    def fill(cls, ingredients):
         for obj in ingredients:
             ingredient, created = cls.objects.get_or_create(
                 title=obj.get('title'),
