@@ -24,7 +24,7 @@
     </div>
     {% if user.is_authenticated %}
         {% is_purchase as purchase_flag %}
-        {% is_favorite as favorite_flag %}    
+        {% is_favorite as favorite_flag %}
         <div class="card__footer">
             {% include 'include/button_purchase.html' with flag=purchase_flag %}
             {% include 'include/button_favorite.html' with flag=favorite_flag %}
