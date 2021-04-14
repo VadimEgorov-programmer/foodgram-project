@@ -2,10 +2,12 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 
+class Role(models.TextChoices):
+    USER = 'USR', 'User'
+    ADMIN = 'ADM', 'Admin'
+
+
 class User(AbstractUser):
-    class Role(models.TextChoices):
-        USER = 'USR', 'User'
-        ADMIN = 'ADM', 'Admin'
 
     email = models.EmailField(blank=False, unique=True)
     username = models.CharField(
@@ -22,7 +24,7 @@ class User(AbstractUser):
 
     @property
     def is_admin(self):
-        return self.role == self.Role.ADMIN or self.is_superuser
+        return self.role == Role.ADMIN or self.is_superuser
 
 
 class Follow(models.Model):
