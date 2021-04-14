@@ -36,13 +36,11 @@ class FavoriteApiView(BaseInstanceView):
     serializer_class = serializers.FavoriteSerializer
 
     def get_object(self):
-        queryset = self.filter_queryset(self.get_queryset())
         instance = get_object_or_404(
-            queryset,
+            Favorite,
             user=self.request.user,
             recipe=self.kwargs['pk'],
         )
-        self.check_object_permissions(self.request, instance)
         return instance
 
 
