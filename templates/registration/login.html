@@ -12,18 +12,7 @@
         <form class="form" method="post" action="{% url 'login' %}">
             {% csrf_token %}
             {% for field in form %}
-                <div class="form__group">
-                    <label for="{{ field.id_for_label }}" class="form__label">{{ field.label }}</label>
-                    <div class="form__field-group">
-                        {{ field|addclass:"form__input" }}
-
-                        {% if field.name == 'password' and form.non_field_errors %}
-                            {% for error in form.non_field_errors %}
-                                <span class="form__error">{{ error }}</span>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-                </div>
+               {% include 'include/form group.html' %}
             {% endfor %}
             <div class="form__footer">
                 <button type="submit" class="button button_style_blue">Войти</button>
