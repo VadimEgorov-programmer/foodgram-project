@@ -7,7 +7,7 @@ router = DefaultRouter()
 router.register('favorites', views.FavoriteApiView)
 router.register('subscriptions', views.FollowApiView)
 router.register('purchases', views.PurchaseApiView)
-router.register('ingredients', views.IgredientApiView)
+router.register('ingredients', views.IngredientApiView)
 
 
 urlpatterns = [
