@@ -74,7 +74,7 @@ class PurchaseApiView(mixins.ListModelMixin, BaseInstanceView):
         return instance
 
 
-class IgredientApiView(mixins.ListModelMixin, viewsets.GenericViewSet):
+class IngredientApiView(mixins.ListModelMixin, viewsets.GenericViewSet):
     queryset = Ingredient.objects.all()
     serializer_class = serializers.IngredientSerializer
     filter_backends = [filters.SearchFilter]
