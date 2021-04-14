@@ -65,6 +65,7 @@ class FavoriteView(
     LoginRequiredMixin,
     BaseFilterView,
     ListView):
+
     model = Recipe
     template_name = 'recipes/favorites.html'
     paginate_by = settings.PAGINATE_BY
