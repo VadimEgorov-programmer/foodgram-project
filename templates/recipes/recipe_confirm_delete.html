@@ -7,7 +7,9 @@
     <div class="custom-center-block">
         <p class="custom-text-block">Вы действительно хотите удалить рецепт "{{ object }}"?</p>
         <div class="custom-button-block">
-            <form method="post">
+            <form
+                    action="{% url 'recipes:recipe_delete' recipe.author.username recipe.id %}"
+                    method="post">
                 {% csrf_token %}
                 <button class="button button_style_blue" type="submit">Да</button>
                 <a href="{% url 'recipes:purchases' %}" class="button">Назад к списку покупок</a></li>
