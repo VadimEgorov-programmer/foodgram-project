@@ -22,29 +22,29 @@ def add_ingredients_to_recipe(recipe, ingredients):
     )
 
 
+X_COORDINATE = 50
+Y_COORDINATE_TITLE = 50
+FONT_SIZE = 18
+Y_COORDINATE_TEXT = 130
+SIZE_DOWN_TITLE = 25  # Number of spaces down
+SIZE_DOWN_TEXT = 44  # Number of spaces down
+FONT_SIZE_TEXT = 12
+
+
 def generate_pdf(user):
     buffer = io.BytesIO()
     canvas = Canvas(buffer, bottomup=0)
 
     title = 'Список покупок'
     canvas.setTitle(title)
-    x_coordinate = 50
-    y_coordinate = 50
 
-    font_size = 18
-    canvas.setFont('GOST_Common', font_size)
-    canvas.drawString(x_coordinate, y_coordinate, title)
+    canvas.setFont('GOST_Common', FONT_SIZE)
+    canvas.drawString(X_COORDINATE, Y_COORDINATE_TITLE, title)
 
-    font_size = 17
-    Paragraphs = 25  # Number of spaces down
-    canvas.setFont('GOST_Common', font_size)
-    canvas.drawString(x_coordinate, y_coordinate + Paragraphs,
+    canvas.setFont('GOST_Common', FONT_SIZE)
+    canvas.drawString(X_COORDINATE, Y_COORDINATE_TITLE + SIZE_DOWN_TITLE,
                       'Продукты которые понадобятся:')
-
-    y_coordinate = 130
-    Paragraphs = 44  # Number of spaces down
-    font_size = 12
-    canvas.setFont('GOST_Common', font_size)
+    canvas.setFont('GOST_Common', FONT_SIZE_TEXT)
 
     ingredients = RecipeIngredient.objects.filter(
         recipe__in_purchases__user=user,
@@ -52,15 +52,15 @@ def generate_pdf(user):
         'ingredient__title',
         'ingredient__dimension',
     ).annotate(quantity=Sum('quantity'))
-
+    y_coordinate = 130
     for ingredient in ingredients:
         line = '{0} {1} {2}'.format(
             ingredient['ingredient__title'],
             ingredient['quantity'],
             ingredient['ingredient__dimension'],
         )
-        canvas.drawString(x_coordinate, y_coordinate, line)
-        y_coordinate += Paragraphs
+        canvas.drawString(X_COORDINATE, Y_COORDINATE_TEXT, line)
+        y_coordinate += SIZE_DOWN_TEXT
 
     canvas.showPage()
     canvas.save()
