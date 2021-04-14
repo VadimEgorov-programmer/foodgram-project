@@ -119,15 +119,17 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class RecipeUpdateView(LoginRequiredMixin, AdminAuthorPermission, UpdateView):
+class RecipeUpdateView(LoginRequiredMixin, UpdateView):
     model = Recipe
+    permission_classes = AdminAuthorPermission
     template_name = 'recipes/add_recipe.html'
     form_class = RecipeForm
     success_url = reverse_lazy('recipes:index')
 
 
-class RecipeDeleteView(LoginRequiredMixin, AdminAuthorPermission, DeleteView):
+class RecipeDeleteView(LoginRequiredMixin, DeleteView):
     model = Recipe
+    permission_classes = AdminAuthorPermission
     success_url = reverse_lazy('recipes:purchases')
 
 
