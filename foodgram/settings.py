@@ -120,6 +120,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+PAGINATE_BY = 6
+
 LOGIN_URL = '/auth/login/'
 LOGIN_REDIRECT_URL = 'recipes:index'
 LOGOUT_REDIRECT_URL = 'recipes:index'

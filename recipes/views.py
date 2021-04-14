@@ -10,6 +10,7 @@ from django.views.generic import (View, ListView, DetailView,
                                   UpdateView,
                                   DeleteView)
 
+from foodgram import settings
 from .filters import TaggedRecipeFilterSet
 from .forms import RecipeForm
 from .permissions import AdminAuthorPermission
@@ -23,7 +24,7 @@ User = get_user_model()
 class IndexView(TagContextMixin, BaseFilterView, ListView):
     model = Recipe
     template_name = 'recipes/index.html'
-    paginate_by = 6
+    paginate_by = settings.PAGINATE_BY
     filterset_class = TaggedRecipeFilterSet
 
     def get_queryset(self):
@@ -51,7 +52,7 @@ class IndexView(TagContextMixin, BaseFilterView, ListView):
 class FollowView(LoginRequiredMixin, ListView):
     model = User
     template_name = 'recipes/follow.html'
-    paginate_by = 6
+    paginate_by = settings.PAGINATE_BY
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -66,7 +67,7 @@ class FavoriteView(
     ListView):
     model = Recipe
     template_name = 'recipes/favorites.html'
-    paginate_by = 6
+    paginate_by = settings.PAGINATE_BY
     filterset_class = TaggedRecipeFilterSet
 
     def get_queryset(self):
@@ -77,7 +78,7 @@ class FavoriteView(
 class ProfileView(TagContextMixin, BaseFilterView, ListView):
     model = Recipe
     template_name = 'recipes/profile.html'
-    paginate_by = 6
+    paginate_by = settings.PAGINATE_BY
     filterset_class = TaggedRecipeFilterSet
 
     def get_context_data(self, **kwargs):
