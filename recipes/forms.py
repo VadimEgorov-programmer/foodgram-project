@@ -1,6 +1,7 @@
 from django import forms
+from django.core.exceptions import ValidationError
 
-from .models import Recipe, Tag
+from .models import Recipe, Tag, Ingredient
 from .service import add_ingredients_to_recipe
 
 
@@ -45,6 +46,12 @@ class RecipeForm(forms.ModelForm):
         )
         if not ingredients:
             raise forms.ValidationError('Отсутствуют ингредиенты')
+
+        all_ingredients = Ingredient.objects.all()
+        for name, quantity in ingredients:
+            if not all_ingredients.filter(title=name):
+                raise ValidationError(
+                    f'В базе данных нет ингредиента "{name}".')
 
         ingredients_clean = []
         for name, quantity in ingredients:
