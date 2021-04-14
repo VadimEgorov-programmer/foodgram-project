@@ -67,17 +67,19 @@ class RecipeIngredient(models.Model):
         verbose_name_plural = 'Ингредиенты рецептов'
 
 
+class TagChoices(models.TextChoices):
+    BREAKFAST = 'breakfast', 'Завтрак'
+    LUNCH = 'lunch', 'Обед'
+    DINNER = 'dinner', 'Ужин'
+
+
+class ColorChoices(models.TextChoices):
+    GREEN = 'green', 'Зеленый'
+    ORANGE = 'orange', 'Оранжевый'
+    PURPLE = 'purple', 'Фиолетовый'
+
+
 class Tag(models.Model):
-    class TagChoices(models.TextChoices):
-        BREAKFAST = 'breakfast', 'Завтрак'
-        LUNCH = 'lunch', 'Обед'
-        DINNER = 'dinner', 'Ужин'
-
-    class ColorChoices(models.TextChoices):
-        GREEN = 'green', 'Зеленый'
-        ORANGE = 'orange', 'Оранжевый'
-        PURPLE = 'purple', 'Фиолетовый'
-
     title = models.CharField(
         choices=TagChoices.choices,
         default=TagChoices.LUNCH,
@@ -156,4 +158,3 @@ class Purchase(models.Model):
 
     def __str__(self):
         return f'{self.user}, {self.recipe}'
-
