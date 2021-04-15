@@ -1,12 +1,12 @@
 name: CI
- 
+
 on: [push]
 
 jobs:
   tests:
     name: Run project test
     runs-on: ubuntu-latest
- 
+
     steps:
     - name: Check out the repo
       uses: actions/checkout@v2
@@ -49,9 +49,6 @@ jobs:
     name: Deploing the project
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
-
-    if: github.ref == 'refs/heads/master'
-
     steps:
       - name: Executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
@@ -63,7 +60,6 @@ jobs:
           source: "docker-compose.yaml, nginx/default.conf"
           target: "~/app/"
           script: |
-            cd ~/deploy/foodgram/
-            docker-compose down
             sudo docker pull wadimegoroff/foodgram-project
-            docker-compose up -d
+            sudo docker stop $(sudo docker ps -a -q)
+            sudo docker run --rm -d wadimegoroff/foodgram-project
