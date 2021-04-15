@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Exists, OuterRef
 from django.http import FileResponse
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django_filters.views import BaseFilterView
 from django.views.generic import (View, ListView, DetailView,
@@ -60,11 +60,8 @@ class FollowView(LoginRequiredMixin, ListView):
             followers__user=self.request.user).order_by('-id')
 
 
-class FavoriteView(
-    TagContextMixin,
-    LoginRequiredMixin,
-    BaseFilterView,
-    ListView):
+class FavoriteView(TagContextMixin, LoginRequiredMixin, BaseFilterView,
+                   ListView):
     model = Recipe
     template_name = 'recipes/favorites.html'
     paginate_by = settings.PAGINATE_BY
@@ -88,7 +85,7 @@ class ProfileView(TagContextMixin, BaseFilterView, ListView):
         if self.request.user.is_authenticated:
             is_follower = self.request.user.followers.filter(
                 author=author).exists()
-            if is_follower == True:
+            if is_follower is True:
                 is_follower = True
         context.update(
             {
