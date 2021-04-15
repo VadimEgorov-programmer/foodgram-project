@@ -1,11 +1,11 @@
-FROM python:3.8.5
+FROM python:3.8.6
 
 WORKDIR /code
 
-COPY ./foodgram .
+COPY requirements.txt /code
 
-COPY ./requirements.txt .
+RUN pip install -r requirements.txt
 
-RUN pip install -r /code/requirements.txt
+COPY . /code
 
-CMD gunicorn foodgram.wsgi:application --bind 0.0.0.0:8000
+CMD gunicorn foodgram.wsgi:application -b 0.0.0:8000

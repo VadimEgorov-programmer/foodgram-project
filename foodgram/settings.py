@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'foodgram.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('DB_ENGINE'),
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get('DB_NAME'),
         'USER': os.environ.get('POSTGRES_USER'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
@@ -129,10 +129,13 @@ LOGIN_REDIRECT_URL = 'recipes:index'
 LOGOUT_REDIRECT_URL = 'recipes:index'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/var/foodgram/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'staticfiles'),
+]
+
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/var/foodgram/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 pdfmetrics.registerFont(
     TTFont(

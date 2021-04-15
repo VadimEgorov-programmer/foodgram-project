@@ -19,8 +19,8 @@ services:
     depends_on:
       - db
     volumes:
-      - static_data:/var/foodgram/static
-      - media_data:/var/foodgram/media
+      - static_data:/code/static
+      - media_data:/code/media
     env_file:
       - ./.env
 
@@ -33,5 +33,5 @@ services:
       - "80:80"
     volumes:
       - ./nginx.conf/host.conf:/etc/nginx/conf.d/default.conf
-      - static_data:/var/foodgram/static
-      - media_data:/var/foodgram/media
+      - static_data:/static
+      - media_data:/media
