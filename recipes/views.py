@@ -65,7 +65,6 @@ class FavoriteView(
     LoginRequiredMixin,
     BaseFilterView,
     ListView):
-
     model = Recipe
     template_name = 'recipes/favorites.html'
     paginate_by = settings.PAGINATE_BY
@@ -87,7 +86,9 @@ class ProfileView(TagContextMixin, BaseFilterView, ListView):
         author = get_object_or_404(User, username=self.kwargs['username'])
         is_follower = False
         if self.request.user.is_authenticated:
-            if self.request.user.followers.filter(author=author).exists():
+            is_follower = self.request.user.followers.filter(
+                author=author).exists()
+            if is_follower == True:
                 is_follower = True
         context.update(
             {
