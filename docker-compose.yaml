@@ -14,7 +14,7 @@ services:
       - ./.env
 
   web:
-    build: .
+    image: wadimegoroff/foodgram-project:latest
     restart: always
     depends_on:
       - db
