@@ -62,4 +62,5 @@ jobs:
           script: |
             sudo docker pull wadimegoroff/foodgram-project
             sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d wadimegoroff/foodgram-project
+            sudo docker-compose down
+            sudo docker-compose up
