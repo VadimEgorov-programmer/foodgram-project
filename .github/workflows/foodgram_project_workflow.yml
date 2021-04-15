@@ -1,4 +1,4 @@
-name: CI
+name: foodgram_project_workflow
 
 on: [push]
 
@@ -79,4 +79,4 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: >
-            ${{ github.workflow }} сервер {{secrets.HOST}} успешно выполнен!
+            ${{ github.workflow }} сервер ${{secrets.HOST}} успешно выполнен!
