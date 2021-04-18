@@ -48,13 +48,11 @@ class RecipeForm(forms.ModelForm):
             raise forms.ValidationError('Отсутствуют ингредиенты')
 
         all_ingredients = Ingredient.objects.all()
+        ingredients_clean = []
         for name, quantity in ingredients:
             if not all_ingredients.filter(title=name):
                 raise ValidationError(
                     f'В базе данных нет ингредиента "{name}".')
-
-        ingredients_clean = []
-        for name, quantity in ingredients:
             if int(quantity) < 1:
                 raise forms.ValidationError(
                     f'Исправьте количество ингредиента "{name}"')
