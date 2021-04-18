@@ -6,6 +6,14 @@ from reportlab.pdfgen.canvas import Canvas
 
 from .models import Ingredient, Recipe, RecipeIngredient
 
+X_COORDINATE = 50
+Y_COORDINATE_TITLE = 50
+FONT_SIZE = 18
+Y_COORDINATE_TEXT = 130
+SIZE_DOWN_TITLE = 25  # Number of spaces down
+SIZE_DOWN_TEXT = 44  # Number of spaces down
+FONT_SIZE_TEXT = 12
+
 
 def add_ingredients_to_recipe(recipe, ingredients):
     Recipe.ingredients.through.objects.bulk_create(
@@ -20,15 +28,6 @@ def add_ingredients_to_recipe(recipe, ingredients):
             ) for ingredient in ingredients
         ],
     )
-
-
-X_COORDINATE = 50
-Y_COORDINATE_TITLE = 50
-FONT_SIZE = 18
-Y_COORDINATE_TEXT = 130
-SIZE_DOWN_TITLE = 25  # Number of spaces down
-SIZE_DOWN_TEXT = 44  # Number of spaces down
-FONT_SIZE_TEXT = 12
 
 
 def generate_pdf(user):
