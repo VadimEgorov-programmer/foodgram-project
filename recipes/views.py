@@ -85,8 +85,6 @@ class ProfileView(TagContextMixin, BaseFilterView, ListView):
         if self.request.user.is_authenticated:
             is_follower = self.request.user.followers.filter(
                 author=author).exists()
-            if is_follower is True:
-                is_follower = True
         context.update(
             {
                 'user_is_follower': is_follower,
