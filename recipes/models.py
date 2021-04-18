@@ -13,14 +13,6 @@ class Ingredient(models.Model):
         verbose_name = 'Ингредиент'
         verbose_name_plural = 'Ингредиенты'
 
-    @classmethod
-    def fill(cls, ingredients):
-        for obj in ingredients:
-            ingredient, created = cls.objects.get_or_create(
-                title=obj.get('title'),
-                dimension=obj.get('dimension')
-            )
-
     def __str__(self):
         return f'{self.title}, {self.dimension}'
 
