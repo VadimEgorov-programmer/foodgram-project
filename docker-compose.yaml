@@ -19,8 +19,8 @@ services:
     depends_on:
       - db
     volumes:
-      - static_data:/code/static
-      - media_data:/code/media
+      - static_data:/var/html/code/static
+      - media_data:/var/html/code/media
     env_file:
       - ./.env
 
