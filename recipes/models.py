@@ -33,9 +33,12 @@ class Recipe(models.Model):
         Ingredient,
         through='RecipeIngredient', verbose_name='ingredients'
     )
-    tags = models.ManyToManyField('Tag', blank=True, related_name='recipes',
+    tags = models.ManyToManyField('Tag',
+                                  blank=True,
+                                  related_name='recipes',
                                   verbose_name='tags')
-    image = models.ImageField(blank=True, upload_to='recipes/',
+    image = models.ImageField(blank=True,
+                              upload_to='recipes/',
                               verbose_name='image')
 
     class Meta:
