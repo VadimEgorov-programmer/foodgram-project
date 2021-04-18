@@ -29,7 +29,7 @@ LOGGING = {
 
 SECRET_KEY = '$@a9h$8h9)%ij#k2uh4h!we0#f5vjaz+fe&gl9-x2h)8ksgm4$'
 
-DEBUG = False
+DEBUG = True
 
 AUTH_USER_MODEL = 'users.User'
 
@@ -90,12 +90,8 @@ WSGI_APPLICATION = 'foodgram.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 

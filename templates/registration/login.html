@@ -12,7 +12,7 @@
         <form class="form" method="post" action="{% url 'login' %}">
             {% csrf_token %}
             {% for field in form %}
-               {% include 'include/form group.html' %}
+               {% include 'include/form_group.html' %}
             {% endfor %}
             <div class="form__footer">
                 <button type="submit" class="button button_style_blue">Войти</button>
