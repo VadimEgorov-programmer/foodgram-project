@@ -51,7 +51,6 @@ def generate_pdf(user):
         'ingredient__title',
         'ingredient__dimension',
     ).annotate(quantity=Sum('quantity'))
-    y_coordinate = 130
     for ingredient in ingredients:
         line = '{0} {1} {2}'.format(
             ingredient['ingredient__title'],
@@ -59,6 +58,7 @@ def generate_pdf(user):
             ingredient['ingredient__dimension'],
         )
         canvas.drawString(X_COORDINATE, Y_COORDINATE_TEXT, line)
+        y_coordinate = 130
         y_coordinate += SIZE_DOWN_TEXT
 
     canvas.showPage()
