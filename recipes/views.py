@@ -61,7 +61,7 @@ class FollowView(LoginRequiredMixin, ListView):
         return context
 
     def get_user_follow(self):
-        return super().get_queryset().filter(
+        return FollowView.queryset.filter(
              followers__user=self.request.user).order_by('-id')
 
 
@@ -79,7 +79,7 @@ class FavoriteView(TagContextMixin, LoginRequiredMixin,
         return context
 
     def get_user_favorite(self):
-        return super().get_queryset().filter(
+        return FavoriteView.queryset.filter(
             in_favorites__user=self.request.user)
 
 
@@ -107,7 +107,7 @@ class ProfileView(TagContextMixin, BaseFilterView, ListView):
 
     def get_queryset(self):
         author = get_object_or_404(User, username=self.kwargs['username'])
-        return super().get_queryset().filter(author=author)
+        return ProfileView.queryset.filter(author=author)
 
 
 class RecipeView(DetailView):
@@ -151,7 +151,7 @@ class PurchaseView(LoginRequiredMixin, ListView):
         return context
 
     def get_user_purchase(self):
-        return super().get_queryset().filter(
+        return PurchaseView.queryset.filter(
             in_purchases__user=self.request.user)
 
 
