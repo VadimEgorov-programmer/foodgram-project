@@ -49,9 +49,8 @@ class FollowApiView(BaseInstanceView):
     serializer_class = serializers.FollowSerializer
 
     def get_object(self):
-        queryset = self.filter_queryset(self.get_queryset())
         instance = get_object_or_404(
-            queryset,
+            FollowApiView.queryset,
             user=self.request.user,
             author=self.kwargs['pk'],
         )
@@ -64,9 +63,8 @@ class PurchaseApiView(mixins.ListModelMixin, BaseInstanceView):
     serializer_class = serializers.PurchaseSerializer
 
     def get_object(self):
-        queryset = self.filter_queryset(self.get_queryset())
         instance = get_object_or_404(
-            queryset,
+            PurchaseApiView.queryset,
             user=self.request.user,
             recipe=self.kwargs['pk'],
         )
