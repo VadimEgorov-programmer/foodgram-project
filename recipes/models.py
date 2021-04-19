@@ -138,7 +138,7 @@ class Purchase(models.Model):
         Recipe,
         on_delete=models.CASCADE,
         related_name='in_purchases',
-        verbose_name='recipe``'
+        verbose_name='recipe'
     )
 
     class Meta:

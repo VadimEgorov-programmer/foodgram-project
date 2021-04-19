@@ -53,11 +53,16 @@ class FollowView(LoginRequiredMixin, ListView):
     model = User
     template_name = 'recipes/follow.html'
     paginate_by = settings.PAGINATE_BY
+    queryset = User.objects.all()
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        return queryset.filter(
-            followers__user=self.request.user).order_by('-id')
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['object_list'] = self.get_user_follow()
+        return context
+
+    def get_user_follow(self):
+        return super().get_queryset().filter(
+             followers__user=self.request.user).order_by('-id')
 
 
 class FavoriteView(TagContextMixin, LoginRequiredMixin,
@@ -66,10 +71,16 @@ class FavoriteView(TagContextMixin, LoginRequiredMixin,
     template_name = 'recipes/favorites.html'
     paginate_by = settings.PAGINATE_BY
     filterset_class = TaggedRecipeFilterSet
+    queryset = Recipe.objects.all()
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        return queryset.filter(in_favorites__user=self.request.user)
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['page_obj'] = self.get_user_favorite()
+        return context
+
+    def get_user_favorite(self):
+        return super().get_queryset().filter(
+            in_favorites__user=self.request.user)
 
 
 class ProfileView(TagContextMixin, BaseFilterView, ListView):
@@ -77,6 +88,7 @@ class ProfileView(TagContextMixin, BaseFilterView, ListView):
     template_name = 'recipes/profile.html'
     paginate_by = settings.PAGINATE_BY
     filterset_class = TaggedRecipeFilterSet
+    queryset = Recipe.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -94,9 +106,8 @@ class ProfileView(TagContextMixin, BaseFilterView, ListView):
         return context
 
     def get_queryset(self):
-        queryset = super().get_queryset()
         author = get_object_or_404(User, username=self.kwargs['username'])
-        return queryset.filter(author=author)
+        return super().get_queryset().filter(author=author)
 
 
 class RecipeView(DetailView):
@@ -132,10 +143,16 @@ class RecipeDeleteView(LoginRequiredMixin, DeleteView):
 class PurchaseView(LoginRequiredMixin, ListView):
     model = Recipe
     template_name = 'recipes/purchases.html'
+    queryset = Recipe.objects.all()
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        return queryset.filter(in_purchases__user=self.request.user)
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['object_list'] = self.get_user_purchase()
+        return context
+
+    def get_user_purchase(self):
+        return super().get_queryset().filter(
+            in_purchases__user=self.request.user)
 
 
 class DownloadPurchasesListView(View):
