@@ -58,8 +58,6 @@ def generate_pdf(user):
             ingredient['ingredient__dimension'],
         )
         canvas.drawString(X_COORDINATE, Y_COORDINATE_TEXT, line)
-        y_coordinate = 130
-        y_coordinate += SIZE_DOWN_TEXT
 
     canvas.showPage()
     canvas.save()
