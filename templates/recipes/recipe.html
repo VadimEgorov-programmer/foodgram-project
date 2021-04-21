@@ -46,7 +46,7 @@
                 <ul class="single-card__items">
                     {% load user_filters %}
                     <li class="single-card__item">
-                        {% include 'include/button_purchase.html' with flag=is_purchase %}
+                        {% include 'include/button_purchase.html' with is_purchase=recipe.is_purchase %}
                     </li>
                     {% include 'include/button_subscribe.html' with author=recipe.author %}
                 </ul>
