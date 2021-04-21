@@ -119,7 +119,7 @@ class RecipeView(DetailView):
 
         if self.request.user.is_authenticated:
             queryset = queryset.annotate(
-                is_follower=Exists(
+                is_favorites=Exists(
                     Favorite.objects.filter(
                         user=self.request.user,
                         recipe=OuterRef('pk'),

@@ -13,7 +13,7 @@
         <div class="single-card__info">
             <div class="single-card__header-info">
                 <h1 class="single-card__title">{{ recipe.title }}</h1>
-                {% include 'include/button_favorite.html' %}
+                {% include 'include/button_favorite.html' with is_favorites=recipe.is_favorites %}
             </div>
             <ul class="single-card__items">
                 {% for tag in recipe.tags.all %}
@@ -44,7 +44,6 @@
 
             {% if user.is_authenticated %}
                 <ul class="single-card__items">
-                    {% load user_filters %}
                     <li class="single-card__item">
                         {% include 'include/button_purchase.html' with is_purchase=recipe.is_purchase %}
                     </li>
