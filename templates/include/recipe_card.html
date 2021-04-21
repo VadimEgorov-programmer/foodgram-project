@@ -23,11 +23,11 @@
         </div>
     </div>
     {% if user.is_authenticated %}
-        {% is_purchase as purchase_flag %}
-        {% is_favorite as favorite_flag %}
+        {% is_purchase as is__purchase %}
+        {% is_favorite as is__favorite %}
         <div class="card__footer">
-            {% include 'include/button_purchase.html' with flag=purchase_flag %}
-            {% include 'include/button_favorite.html' with flag=favorite_flag %}
+            {% include 'include/button_purchase.html' with is_purchase=is__purchase %}
+            {% include 'include/button_favorite.html' with is_favorites=is__favorite %}
         </div>
     {% endif %}
 </div>

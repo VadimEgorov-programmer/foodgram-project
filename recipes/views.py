@@ -32,14 +32,14 @@ class IndexView(TagContextMixin, BaseFilterView, ListView):
 
         if self.request.user.is_authenticated:
             queryset = queryset.annotate(
-                is_in_favorites=Exists(
+                is_favorites=Exists(
                     Favorite.objects.filter(
                         user=self.request.user,
                         recipe=OuterRef('pk'),
                     ),
                 ),
             ).annotate(
-                is_in_purchases=Exists(
+                is_purchase=Exists(
                     Purchase.objects.filter(
                         user=self.request.user,
                         recipe=OuterRef('pk'),
