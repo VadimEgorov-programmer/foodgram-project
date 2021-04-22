@@ -10,11 +10,19 @@
                 </li>
             {% endfor %}
 
-            {% if author.recipes.count > 3 %}
+            {% if author.recipes.count > 4 %}
                 <li class="card-user__item">
-                    <a href="{% url 'recipes:profile' username=author.username %}" class="card-user__link link">Еще {{ author.recipes.count|add:"-3" }} рецептов...</a>
+                    <a href="{% url 'recipes:profile' username=author.username %}" class="card-user__link link">Еще {{ author.recipes.count|add:"-3" }} рецептов </a>
                 </li>
-            {% endif %}
+            {% elif author.recipes.count < 4 %}
+                <li class="card-user__item">
+                    <a href="{% url 'recipes:profile' username=author.username %}" class="card-user__link link">Еще {{ author.recipes.count|add:"-3" }} рецепта </a>
+                </li>
+            { elif author.recipes.count == 1 %}
+                <li class="card-user__item">
+                    <a href="{% url 'recipes:profile' username=author.username %}" class="card-user__link link">Еще {{ author.recipes.count|add:"-3" }} рецепт </a>
+                </li>
+             {% endif %}
         </ul>
     </div>
     <div class="card-user__footer">
