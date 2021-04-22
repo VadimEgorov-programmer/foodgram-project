@@ -29,10 +29,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/recipes/recipe.html">
+        <entry file="file://$PROJECT_DIR$/recipes/service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="81" selection-start-line="81" selection-end-line="81" />
+            <state relative-caret-position="710">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,7 +73,6 @@
         <option value="$PROJECT_DIR$/templates/recipes/profile.html" />
         <option value="$PROJECT_DIR$/templates/include/button_subscribe.html" />
         <option value="$PROJECT_DIR$/recipes/management/commands/load_data.py" />
-        <option value="$PROJECT_DIR$/recipes/service.py" />
         <option value="$PROJECT_DIR$/templates/include/button_favorite_recipe.html" />
         <option value="$PROJECT_DIR$/templates/recipes/purchases.html" />
         <option value="$PROJECT_DIR$/templates/include/recipe_preview.html" />
@@ -84,6 +86,7 @@
         <option value="$PROJECT_DIR$/templates/include/recipe_card.html" />
         <option value="$PROJECT_DIR$/recipes/views.py" />
         <option value="$PROJECT_DIR$/templates/recipes/follow.html" />
+        <option value="$PROJECT_DIR$/recipes/service.py" />
       </list>
     </option>
   </component>
@@ -110,29 +113,6 @@
             <path>
               <item name="foodgram-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="foodgram-project" type="462c0819:PsiDirectoryNode" />
-              <item name="recipes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="foodgram-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="foodgram-project" type="462c0819:PsiDirectoryNode" />
-              <item name="recipes" type="462c0819:PsiDirectoryNode" />
-              <item name="templatetags" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="foodgram-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="foodgram-project" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="foodgram-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="foodgram-project" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="include" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="foodgram-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="foodgram-project" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="recipes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -188,6 +168,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1456" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24980299" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -392,16 +373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recipes/service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/include/paginator.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -434,13 +405,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -571,8 +535,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/recipes/recipe.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
+        <state relative-caret-position="805">
           <caret line="81" selection-start-line="81" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recipes/service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="710">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
         </state>
       </provider>
     </entry>
