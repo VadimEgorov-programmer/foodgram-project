@@ -23,9 +23,9 @@
                                     <input  type="checkbox"
                                             name="tags"
                                             value="{{ tag.pk }}"
-                                            id="id_tags_{{ forloop.counter }}"
-                                            class="tags__checkbox tags__checkbox_style_{{ tag.color }}">
-                                    <label for="id_tags_{{ forloop.counter }}" class="tags__label">{{ tag.get_title_display }}</label>
+                                            id="id_{{ tag.name }}"
+                                            class="tags__checkbox tags__checkbox_style_{{ tag.color }}"
+                                    <label for="id_{{ tag.name }}" class="tags__label">{{ tag.get_title_display }}</label>
                                 </div>
                             {% endfor %}
                         </div>
