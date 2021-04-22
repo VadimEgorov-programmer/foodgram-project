@@ -1,6 +1,7 @@
 from django.template import Library
 
 from recipes.models import Purchase
+from users.models import Follow
 
 register = Library()
 
@@ -55,3 +56,8 @@ def manage_tags(context, **kwargs):
 @register.simple_tag(takes_context=True)
 def get_purchases_count(context, **kwargs):
     return Purchase.objects.filter(user=context['request'].user).count()
+
+
+@register.filter
+def is_subscribed_to(user, author):
+    return Follow.objects.filter(user=user, author=author).exists()

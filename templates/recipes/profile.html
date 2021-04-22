@@ -1,11 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load user_filters %}
 
 {% block title %}Рецепты | {{ author.get_full_name|default:author.username }}{% endblock title %}
 {% block header_title %}{{ author.get_full_name|default:author.username }}{% endblock header_title %}
 
 {% block content %}
-    {% include 'include/button_subscribe.html' %}
+
+    {% if user.is_authenticated and author != user %}
+        <div class="author-subscribe" data-author="{{ author.pk }}">
+            <p style="padding: 0 0 2em 0;">
+                {% if user|is_subscribed_to:author %}
+            <button class="button button_style_light-blue button_size_subscribe" name="subscribe">
+            Отписаться от автора
+          </button>
+        {% else %}
+          <button class="button button_style_light-blue button_size_subscribe" name="subscribe" data-out>
+            Подписаться на автора
+          </button>
+        {% endif %}
+        </p>
+        </div>
+    {% endif %}
+
     <div class="card-list">
         {% for recipe in page_obj %}
             {% include 'include/recipe_card.html' %}
