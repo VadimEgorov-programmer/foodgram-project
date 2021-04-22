@@ -23,11 +23,9 @@
         </div>
     </div>
     {% if user.is_authenticated %}
-        {% is_purchase as is__purchase %}
-        {% is_favorite as is__favorite %}
         <div class="card__footer">
-            {% include 'include/button_purchase.html' with is_purchase=is__purchase %}
-            {% include 'include/button_favorite.html' with is_favorites=is__favorite %}
+            {% include 'include/button_purchase.html' with is_purchase=is_purchase %}
+            {% include 'include/button_favorite.html' with is_favorites=is_favorite %}
         </div>
     {% endif %}
 </div>

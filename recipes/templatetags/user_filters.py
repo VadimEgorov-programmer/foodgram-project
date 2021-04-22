@@ -1,6 +1,6 @@
 from django.template import Library
 
-from recipes.models import Purchase
+from recipes.models import Purchase, Favorite
 from users.models import Follow
 
 register = Library()
@@ -11,20 +11,19 @@ def addclass(field, css):
     return field.as_widget(attrs={'class': css})
 
 
-@register.simple_tag(takes_context=True)
-def is_favorite(context):
-    return context['user'].favorite_recipes.filter(
-        recipe=context['recipe']).exists()
+@register.filter
+def is_follower(user, author):
+    return Follow.objects.filter(user=user, author=author).exists()
 
 
-@register.simple_tag(takes_context=True)
-def is_follower(context):
-    return context['user'].follow.filter(author=context['author']).exists()
+@register.filter
+def is_favorite(recipe, user):
+    return Favorite.objects.filter(recipe=recipe, user=user).exists()
 
 
-@register.simple_tag(takes_context=True)
-def is_purchase(context):
-    return context['user'].purchases.filter(recipe=context['recipe']).exists()
+@register.filter
+def is_purchase(recipe, user):
+    return Purchase.objects.filter(recipe=recipe, user=user).exists()
 
 
 @register.simple_tag(takes_context=True)
@@ -56,8 +55,3 @@ def manage_tags(context, **kwargs):
 @register.simple_tag(takes_context=True)
 def get_purchases_count(context, **kwargs):
     return Purchase.objects.filter(user=context['request'].user).count()
-
-
-@register.filter
-def is_subscribed_to(user, author):
-    return Follow.objects.filter(user=user, author=author).exists()
