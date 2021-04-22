@@ -13,6 +13,7 @@ Y_COORDINATE_TEXT = 130
 SIZE_DOWN_TITLE = 25  # Number of spaces down
 SIZE_DOWN_TEXT = 44  # Number of spaces down
 FONT_SIZE_TEXT = 12
+FONT = 'GOST_Common'
 
 
 def add_ingredients_to_recipe(recipe, ingredients):
@@ -37,13 +38,13 @@ def generate_pdf(user):
     title = 'Список покупок'
     canvas.setTitle(title)
 
-    canvas.setFont('GOST_Common', FONT_SIZE)
+    canvas.setFont(FONT, FONT_SIZE)
     canvas.drawString(X_COORDINATE, Y_COORDINATE_TITLE, title)
 
-    canvas.setFont('GOST_Common', FONT_SIZE)
+    canvas.setFont(FONT, FONT_SIZE)
     canvas.drawString(X_COORDINATE, Y_COORDINATE_TITLE + SIZE_DOWN_TITLE,
                       'Продукты которые понадобятся:')
-    canvas.setFont('GOST_Common', FONT_SIZE_TEXT)
+    canvas.setFont(FONT, FONT_SIZE_TEXT)
 
     ingredients = RecipeIngredient.objects.filter(
         recipe__in_purchases__user=user,
