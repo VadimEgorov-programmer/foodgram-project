@@ -17,6 +17,8 @@ from .permissions import AdminAuthorPermission
 from .service import generate_pdf
 from .mixins import TagContextMixin
 from .models import Recipe, Favorite, Purchase
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
 
 User = get_user_model()
 
@@ -164,3 +166,15 @@ class DownloadPurchasesListView(View):
             as_attachment=True,
             filename='purchases.pdf',
         )
+
+
+@login_required
+def get_purchases_count(request):
+    """
+    Shopping List.
+    """
+    recipes = request.user.purchases.all()
+    return render(
+        request,
+        {'recipes': recipes},
+    )

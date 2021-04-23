@@ -13,9 +13,9 @@
             {% endif %}
             <li class="nav__item {% if user.is_anonymous %}nav__item_disabled{% elif url == 'purchases' %}nav__item_active{% endif %}">
                 <a href="{% url 'recipes:purchases' %}" class="nav__link link">
-                    Список покупок 
+                    Список покупок
                     {% if user.is_authenticated %}
-                        <span class="badge badge_style_blue nav__badge" id="counter">{% get_purchases_count %}</span>
+                        <span class="badge badge_style_blue nav__badge" id="counter">{{ get_purchases_count }}</span>
                     {% endif %}
                 </a>
             </li>
@@ -32,4 +32,4 @@
         {% endwith %}
     </div>
 </nav>
-        </header>
+</header>
