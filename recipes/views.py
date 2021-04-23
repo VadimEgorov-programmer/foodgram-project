@@ -114,27 +114,6 @@ class RecipeView(DetailView):
     model = Recipe
     template_name = 'recipes/recipe.html'
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-
-        if self.request.user.is_authenticated:
-            queryset = queryset.annotate(
-                is_favorites=Exists(
-                    Favorite.objects.filter(
-                        user=self.request.user,
-                        recipe=OuterRef('pk'),
-                    ),
-                ),
-            ).annotate(
-                is_purchase=Exists(
-                    Purchase.objects.filter(
-                        user=self.request.user,
-                        recipe=OuterRef('pk'),
-                    ),
-                ),
-            )
-        return queryset
-
 
 class RecipeCreateView(LoginRequiredMixin, CreateView):
     model = Recipe
