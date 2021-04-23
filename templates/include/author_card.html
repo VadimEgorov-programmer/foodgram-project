@@ -1,3 +1,5 @@
+{% load user_filters %}
+
 <div class="card-user" data-author="{{ author.pk }}">
     <div class="card-user__header">
         <h2 class="card-user__title">{{ author.get_full_name|default:author.username }} </h2>
@@ -10,19 +12,11 @@
                 </li>
             {% endfor %}
 
-            {% if author.recipes.count > 4 %}
+            {% if author.recipes.count > 3 %}
                 <li class="card-user__item">
-                    <a href="{% url 'recipes:profile' username=author.username %}" class="card-user__link link">Еще {{ author.recipes.count|add:"-3" }} рецептов </a>
+                    <a href="{% url 'recipes:profile' username=author.username %}" class="card-user__link link">Еще {{ author.recipes.count|add:"-3"|declination:"рецепт,рецепта,рецептов" }} </a>
                 </li>
-            {% elif author.recipes.count < 4 %}
-                <li class="card-user__item">
-                    <a href="{% url 'recipes:profile' username=author.username %}" class="card-user__link link">Еще {{ author.recipes.count|add:"-3" }} рецепта </a>
-                </li>
-            {% elif author.recipes.count == 1 %}
-                <li class="card-user__item">
-                    <a href="{% url 'recipes:profile' username=author.username %}" class="card-user__link link">Еще {{ author.recipes.count|add:"-3" }} рецепт </a>
-                </li>
-             {% endif %}
+            {% endif %}
         </ul>
     </div>
     <div class="card-user__footer">

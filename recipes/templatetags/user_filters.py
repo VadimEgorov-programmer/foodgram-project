@@ -55,3 +55,15 @@ def manage_tags(context, **kwargs):
 @register.simple_tag(takes_context=True)
 def get_purchases_count(context, **kwargs):
     return Purchase.objects.filter(user=context['request'].user).count()
+
+
+@register.filter
+def declination(number, args):
+    args = [arg.strip() for arg in args.split(',')]
+    last_number = int(number) % 10
+    if last_number == 1:
+        return f'{number} {args[0]}'
+    elif last_number > 1 and last_number < 5:
+        return f'{number} {args[1]}'
+    elif last_number > 4 or last_number == 0:
+        return f'{number} {args[2]}'
