@@ -54,12 +54,15 @@ def manage_tags(context, **kwargs):
 
 @register.filter
 def declination(number, args):
-    a = number % 10
-    b = number % 100
-    args = [arg.strip() for arg in args.split(',')]
-    if (a == 1) and (b != 11):
-        return f'{number} {args[0]}'
-    elif (a >= 2) and (a <= 4) and ((b < 10) or (b >= 20)):
-        return f'{number} {args[1]}'
+    first_number = number % 10
+    second_number = number % 100
+    string = str(number) + ' '
+    variants = ('рецепт', 'рецепта', 'рецептов')
+    if (first_number == 1) and (second_number != 11):
+        string += variants[0]
+    elif first_number >= 2 and first_number <= 4 \
+            and (second_number < 10 or second_number >= 20):
+        string += variants[1]
     else:
-        return f'{number} {args[2]}'
+        string += variants[2]
+    return string
