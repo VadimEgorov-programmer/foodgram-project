@@ -11,8 +11,8 @@ pytz==2021.1
 reportlab==3.5.65
 sorl-thumbnail==12.7.0
 sqlparse==0.4.1
-urllib3==1.25.6           # via requests
-wcwidth==0.1.8            # via pytest
+urllib3==1.25.6
+wcwidth==0.1.8
 zipp==2.2.0
 djangorestframework-simplejwt==4.3.0
 PyJWT==1.7.1

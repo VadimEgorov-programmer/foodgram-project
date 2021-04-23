@@ -105,11 +105,11 @@
         <option value="$PROJECT_DIR$/templates/include/recipe_card.html" />
         <option value="$PROJECT_DIR$/templates/recipes/profile.html" />
         <option value="$PROJECT_DIR$/templates/include/nav.html" />
-        <option value="$PROJECT_DIR$/foodgram/settings.py" />
         <option value="$PROJECT_DIR$/recipes/context_processors.py" />
         <option value="$PROJECT_DIR$/recipes/views.py" />
         <option value="$PROJECT_DIR$/templates/include/author_card.html" />
         <option value="$PROJECT_DIR$/recipes/templatetags/user_filters.py" />
+        <option value="$PROJECT_DIR$/foodgram/settings.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
@@ -144,6 +144,11 @@
               <item name="foodgram-project" type="462c0819:PsiDirectoryNode" />
               <item name=".github" type="462c0819:PsiDirectoryNode" />
               <item name="workflows" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="foodgram-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="foodgram-project" type="462c0819:PsiDirectoryNode" />
+              <item name="foodgram" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="foodgram-project" type="b2602c69:ProjectViewProjectNode" />
@@ -566,16 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/foodgram/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/recipes/context_processors.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -639,6 +634,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.flake8">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/foodgram/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="919">
+          <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.github/workflows/foodgram_project_workflow.yml">
       <provider selected="true" editor-type-id="text-editor" />
