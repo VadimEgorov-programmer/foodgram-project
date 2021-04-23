@@ -5,6 +5,8 @@ from users.models import Follow
 
 register = Library()
 
+VARIANTS = (' рецепт ', ' рецепта ', ' рецептов ')
+
 
 @register.filter
 def addclass(field, css):
@@ -54,16 +56,14 @@ def manage_tags(context, **kwargs):
 
 @register.filter
 def declination(number, args):
-    first_number = number % 10
-    second_number = number % 100
-    string = str(number) + ' '
-    variants = ('рецепт', 'рецепта', 'рецептов')
-    if (first_number == 1) and (second_number != 11):
-        string += variants[0]
-    elif first_number >= 2 and first_number <= 4 \
-            and (second_number < 10 or second_number >= 20):
-        string += variants[1]
+    mod_10 = number % 10
+    mod_100 = number % 100
+    f_string = f'{number}'
+    if mod_10 == 1 and mod_100 != 11:
+        f_string += VARIANTS[0]
+    elif mod_10 >= 2 and mod_10 <= 4 \
+            and (mod_100 < 10 or mod_100 >= 20):
+        f_string += VARIANTS[1]
     else:
-        string += variants[2]
-    return string
-
+        f_string += VARIANTS[2]
+    return f_string
