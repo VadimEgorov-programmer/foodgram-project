@@ -59,11 +59,12 @@ def get_purchases_count(context, **kwargs):
 
 @register.filter
 def declination(number, args):
+    a = number % 10
+    b = number % 100
     args = [arg.strip() for arg in args.split(',')]
-    last_number = int(number) % 10
-    if last_number == 1:
+    if (a == 1) and (b != 11):
         return f'{number} {args[0]}'
-    elif last_number > 1 and last_number < 5:
+    elif (a >= 2) and (a <= 4) and ((b < 10) or (b >= 20)):
         return f'{number} {args[1]}'
-    elif last_number > 4 or last_number == 0:
+    else:
         return f'{number} {args[2]}'
