@@ -1,13 +1,11 @@
 {% load user_filters %}
-<div class="author-subscribe" data-author="{{ author.pk }}">
-    {% if user|is_follower:author %}
-        <button class="button button_style_light-blue button_size_subscribe" name="subscribe">
-            Отписаться от автора
-        </button>
-    {% else %}
-        <button class="button button_style_light-blue button_size_subscribe" name="subscribe" data-out>
-            Подписаться на автора
-        </button>
-    {% endif %}
-    </p>
-</div>
+
+{% if user|is_follower:author %}
+    <button class="button button_style_light-blue button_size_subscribe" name="subscribe">
+        Отписаться от автора
+    </button>
+{% else %}
+    <button class="button button_style_light-blue button_size_subscribe" name="subscribe" data-out>
+        Подписаться на автора
+    </button>
+{% endif %}
