@@ -1,5 +1,4 @@
 {% load static %}
-{% load user_filters %}
 
 <div class="card" data-id="{{ recipe.pk }}">
     <a href="{% url 'recipes:recipe' username=recipe.author.username pk=recipe.id %}" class="link" target="_blank">
@@ -24,8 +23,8 @@
     </div>
     {% if user.is_authenticated %}
         <div class="card__footer">
-            {% include 'include/button_purchase.html' with is_purchase=is_purchase %}
-            {% include 'include/button_favorite.html' with is_favorites=is_favorite %}
+            {% include 'include/button_purchase.html' %}
+            {% include 'include/button_favorite.html' %}
         </div>
     {% endif %}
 </div>
