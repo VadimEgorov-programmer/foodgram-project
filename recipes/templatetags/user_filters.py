@@ -66,3 +66,4 @@ def declination(number, args):
     else:
         string += variants[2]
     return string
+
