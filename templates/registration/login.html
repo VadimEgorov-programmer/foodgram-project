@@ -11,6 +11,7 @@
     <div class="form-container">
         <form class="form" method="post" action="{% url 'login' %}">
             {% csrf_token %}
+            <span class="form__error">{{ form.non_field_errors }}</span>
             {% for field in form %}
                {% include 'include/form_group.html' %}
             {% endfor %}
