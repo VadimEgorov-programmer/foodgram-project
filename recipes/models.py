@@ -37,7 +37,7 @@ class Recipe(models.Model):
                                   blank=True,
                                   related_name='recipes',
                                   verbose_name='tags')
-    image = models.ImageField(blank=True,
+    image = models.ImageField(blank=False,
                               upload_to='recipes/',
                               verbose_name='image')
 
