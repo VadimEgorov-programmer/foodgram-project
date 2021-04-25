@@ -72,3 +72,11 @@ html,
 body {
     min-height: 100%;
 }
+
+a {
+   text-decoration: none; /* Убираем подчеркивание у ссылок */
+  }
+  a:hover {
+   text-decoration: underline; /* Добавляем подчёркивание
+                                   при наведении курсора мыши на ссылку */
+  }
