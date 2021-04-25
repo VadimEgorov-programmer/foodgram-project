@@ -21,7 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="35bcbf08-70ec-4061-9bcd-a1e8365ebf7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/foodgram/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodgram/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/recipes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recipes/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipes/templatetags/user_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/templatetags/user_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/include/paginator.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/include/paginator.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/foodgram/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="77" column="1" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="1" />
+            <state relative-caret-position="578">
+              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -43,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/recipes/templatetags/user_filters.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="946">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
+              <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -57,11 +58,7 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/include/paginator.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -87,20 +84,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/recipes/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="95" selection-start-line="3" selection-start-column="95" selection-end-line="3" selection-end-column="95" />
+              <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/include/author_card.html">
+        <entry file="file://$PROJECT_DIR$/templates/include/recipe_card.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
+            <state relative-caret-position="527">
+              <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#p#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -192,7 +192,6 @@
         <option value="$PROJECT_DIR$/templates/include/button_purchase.html" />
         <option value="$PROJECT_DIR$/templates/recipes/add_recipe.html" />
         <option value="$PROJECT_DIR$/templates/include/button_subscribe.html" />
-        <option value="$PROJECT_DIR$/templates/include/recipe_card.html" />
         <option value="$PROJECT_DIR$/templates/recipes/profile.html" />
         <option value="$PROJECT_DIR$/templates/include/nav.html" />
         <option value="$PROJECT_DIR$/recipes/views.py" />
@@ -204,13 +203,14 @@
         <option value="$PROJECT_DIR$/recipes/models.py" />
         <option value="$PROJECT_DIR$/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/templates/include/tags.html" />
-        <option value="$PROJECT_DIR$/templates/include/paginator.html" />
-        <option value="$PROJECT_DIR$/recipes/templatetags/user_filters.py" />
         <option value="$PROJECT_DIR$/recipes/static/pages/single.css" />
         <option value="$PROJECT_DIR$/templates/recipes/recipe.html" />
-        <option value="$PROJECT_DIR$/foodgram/settings.py" />
         <option value="$PROJECT_DIR$/templates/include/author_card.html" />
+        <option value="$PROJECT_DIR$/templates/include/recipe_card.html" />
         <option value="$PROJECT_DIR$/templates/recipes/index.html" />
+        <option value="$PROJECT_DIR$/foodgram/settings.py" />
+        <option value="$PROJECT_DIR$/recipes/templatetags/user_filters.py" />
+        <option value="$PROJECT_DIR$/templates/include/paginator.html" />
       </list>
     </option>
   </component>
@@ -334,7 +334,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1456" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22064617" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -661,16 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/include/recipe_card.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#p#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -719,32 +708,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recipes/templatetags/user_filters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/recipes/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="946">
           <caret line="155" selection-start-line="155" selection-end-line="155" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/foodgram/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="77" column="1" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -756,6 +725,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/include/recipe_card.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#p#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/recipes/static/pages/single.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="942">
@@ -763,10 +742,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/include/paginator.html">
+    <entry file="file://$PROJECT_DIR$/templates/recipes/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="51">
+          <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/foodgram/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -782,10 +771,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/recipes/index.html">
+    <entry file="file://$PROJECT_DIR$/templates/include/paginator.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recipes/templatetags/user_filters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="95" selection-start-line="3" selection-start-column="95" selection-end-line="3" selection-end-column="95" />
+        <state relative-caret-position="946">
+          <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -75,3 +75,14 @@ def url_replace(context, **kwargs):
     query = context['request'].GET.dict()
     query.update(kwargs)
     return urlencode(query)
+
+
+@register.simple_tag
+def full_page(request, page_num):
+    path = request.get_full_path()
+    current_page = request.GET.get('page')
+    if 'tags' in path and 'page' in path:
+        return path.replace(f'page={current_page}', f'page={page_num}')
+    if 'tags' in path and 'page' not in path:
+        return f'?page={page_num}&{path[2:]}'
+    return f'?page={page_num}'
