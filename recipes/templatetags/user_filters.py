@@ -77,6 +77,14 @@ def url_replace(context, **kwargs):
     return urlencode(query)
 
 
+@register.filter(name='url_parse')
+def url_parse(request):
+    filter_tags = ''
+    for item in request.GET.getlist('filters'):
+        filter_tags += f'&filters={item}'
+    return filter_tags
+
+
 @register.simple_tag
 def full_page(request, page_num):
     path = request.get_full_path()
