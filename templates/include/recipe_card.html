@@ -1,5 +1,7 @@
 {% load static %}
 
+{% block css %}<link rel="stylesheet" href="{% static 'pages/single.css' %}">{% endblock css %}
+
 <div class="card" data-id="{{ recipe.pk }}">
     <a href="{% url 'recipes:recipe' username=recipe.author.username pk=recipe.id %}" class="link" target="_blank">
         {% load thumbnail %}
