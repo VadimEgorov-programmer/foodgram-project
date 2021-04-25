@@ -67,3 +67,13 @@ def declination(number, args):
     else:
         f_string += VARIANTS[2]
     return f_string
+
+
+from django.utils.http import urlencode
+
+
+@register.simple_tag(takes_context=True)
+def url_replace(context, **kwargs):
+    query = context['request'].GET.dict()
+    query.update(kwargs)
+    return urlencode(query)
