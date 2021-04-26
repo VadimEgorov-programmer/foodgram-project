@@ -13,6 +13,10 @@ class Ingredient(models.Model):
         ordering = ('title',)
         verbose_name = 'Ингредиент'
         verbose_name_plural = 'Ингредиенты'
+        constraints = [
+            models.UniqueConstraint(fields=('title', 'dimension'),
+                                    name='unique_composition_link'),
+        ]
 
     def __str__(self):
         return f'{self.title}, {self.dimension}'
@@ -34,7 +38,7 @@ class Recipe(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True,
                                     verbose_name='pub date')
     cooking_time = models.PositiveIntegerField(
-        verbose_name='Cooking time',validators=[validate_zero])
+        verbose_name='Cooking time', validators=[validate_zero])
     ingredients = models.ManyToManyField(
         Ingredient,
         through='RecipeIngredient', verbose_name='ingredients'
