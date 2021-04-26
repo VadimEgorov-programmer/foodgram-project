@@ -2,7 +2,6 @@ from django.template import Library
 
 from recipes.models import Purchase, Favorite
 from users.models import Follow
-from django.utils.http import urlencode
 
 register = Library()
 
