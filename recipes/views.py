@@ -70,12 +70,7 @@ class FavoriteView(TagContextMixin, LoginRequiredMixin,
     filterset_class = TaggedRecipeFilterSet
     queryset = Recipe.objects.all()
 
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-        context['page_obj'] = self.get_user_favorite()
-        return context
-
-    def get_user_favorite(self):
+    def get_queryset(self):
         return FavoriteView.queryset.filter(
             in_favorites__user=self.request.user)
 
