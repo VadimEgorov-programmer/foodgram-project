@@ -63,6 +63,9 @@ class RecipeForm(forms.ModelForm):
                 })
         return ingredients_clean
 
+    # def clean_cooking_time(self):
+    #     cooking_time =
+
     def save(self, commit=True):
         instance = super().save(commit=False)
         instance.save()

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
 
 User = get_user_model()
 
@@ -17,6 +18,11 @@ class Ingredient(models.Model):
         return f'{self.title}, {self.dimension}'
 
 
+def validate_zero(value):
+    if value == 0:
+        raise ValidationError('Время приготовления не может быть равно нулю')
+
+
 class Recipe(models.Model):
     title = models.CharField(max_length=256, verbose_name='name')
     author = models.ForeignKey(
@@ -28,7 +34,7 @@ class Recipe(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True,
                                     verbose_name='pub date')
     cooking_time = models.PositiveIntegerField(
-        verbose_name='Cooking time')
+        verbose_name='Cooking time',validators=[validate_zero])
     ingredients = models.ManyToManyField(
         Ingredient,
         through='RecipeIngredient', verbose_name='ingredients'
