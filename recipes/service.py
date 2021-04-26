@@ -44,6 +44,7 @@ def generate_pdf(user):
     canvas.setFont(FONT, FONT_SIZE)
     canvas.drawString(X_COORDINATE, Y_COORDINATE_TITLE + SIZE_DOWN_TITLE,
                       'Продукты которые понадобятся:')
+    y_coordinate = 130
     canvas.setFont(FONT, FONT_SIZE_TEXT)
 
     ingredients = RecipeIngredient.objects.filter(
@@ -58,7 +59,8 @@ def generate_pdf(user):
             ingredient['quantity'],
             ingredient['ingredient__dimension'],
         )
-        canvas.drawString(X_COORDINATE, Y_COORDINATE_TEXT, line)
+        canvas.drawString(X_COORDINATE, y_coordinate, line)
+        y_coordinate += SIZE_DOWN_TEXT
 
     canvas.showPage()
     canvas.save()
