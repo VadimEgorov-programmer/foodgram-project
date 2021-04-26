@@ -14,7 +14,7 @@
             <div class="single-card__header-info">
                 <h1 class="single-card__title">{{ recipe.title }}</h1>
                 {% if user.is_authenticated %}
-                {% include 'include/button_favorite.html' with is_favorites=recipe.is_favorites %}
+                {% include 'include/button_favorite.html' with is_favorites=recipe.is_favorites big=True %}
                 {% endif %}
             </div>
             <ul class="single-card__items">
