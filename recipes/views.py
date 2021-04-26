@@ -59,7 +59,7 @@ class FollowView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return FollowView.queryset.filter(
-            followers__user=self.request.user).order_by('-id'
+            followers__user=self.request.user).order_by('-id')
 
 
 class FavoriteView(TagContextMixin, LoginRequiredMixin,
