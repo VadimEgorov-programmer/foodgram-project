@@ -6,7 +6,7 @@ from django.utils.http import urlencode
 
 register = Library()
 
-VARIANTS = (' рецепт ', ' рецепта ', ' рецептов ')
+VARIANTS = ('рецепт', 'рецепта', 'рецептов')
 
 
 @register.filter
@@ -59,30 +59,15 @@ def manage_tags(context, **kwargs):
 def declination(number, args):
     mod_10 = number % 10
     mod_100 = number % 100
-    f_string = f'{number}'
+    string = ''
     if mod_10 == 1 and mod_100 != 11:
-        f_string += VARIANTS[0]
+        string += VARIANTS[0]
     elif mod_10 >= 2 and mod_10 <= 4 \
             and (mod_100 < 10 or mod_100 >= 20):
-        f_string += VARIANTS[1]
+        string += VARIANTS[1]
     else:
-        f_string += VARIANTS[2]
-    return f_string
-
-
-@register.simple_tag(takes_context=True)
-def url_replace(context, **kwargs):
-    query = context['request'].GET.dict()
-    query.update(kwargs)
-    return urlencode(query)
-
-
-@register.filter(name='url_parse')
-def url_parse(request):
-    filter_tags = ''
-    for item in request.GET.getlist('filters'):
-        filter_tags += f'&filters={item}'
-    return filter_tags
+        string += VARIANTS[2]
+    return f'{number} { string}'
 
 
 @register.simple_tag

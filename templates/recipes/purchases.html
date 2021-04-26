@@ -10,7 +10,7 @@
     <div class="card-list card-list_column">
         <ul class="shopping-list">
             {% for recipe in object_list %}
-                {% include 'include/recipe_preview.html' with recipe=recipe %}
+                {% include 'include/recipe_purchases_preview.html' with recipe=recipe %}
             {% endfor %}
         </ul>
 
