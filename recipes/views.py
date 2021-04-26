@@ -57,14 +57,9 @@ class FollowView(LoginRequiredMixin, ListView):
     paginate_by = settings.PAGINATE_BY
     queryset = User.objects.all()
 
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-        context['object_list'] = self.get_user_follow()
-        return context
-
-    def get_user_follow(self):
+    def get_queryset(self):
         return FollowView.queryset.filter(
-            followers__user=self.request.user).order_by('-id')
+            followers__user=self.request.user).order_by('-id'
 
 
 class FavoriteView(TagContextMixin, LoginRequiredMixin,
