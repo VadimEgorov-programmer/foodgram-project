@@ -15,6 +15,7 @@ DEBUG = False
 AUTH_USER_MODEL = 'users.User'
 
 ALLOWED_HOSTS = [
+    '*',
     'https://diplom-vadimegorov-programmer.tk/',
 
 ]
