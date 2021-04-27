@@ -15,7 +15,7 @@ DEBUG = False
 AUTH_USER_MODEL = 'users.User'
 
 ALLOWED_HOSTS = [
-    '*',
+    'https://diplom-vadimegorov-programmer.tk/',
 
 ]
 
@@ -128,7 +128,11 @@ pdfmetrics.registerFont(
     )
 )
 
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
-
 SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'foodgram.vadimegorov.programmer@gmail.com'
+EMAIL_HOST_PASSWORD = 'u3kFt6ruKPPQrQDQtcNSWbwJ5K5z'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
