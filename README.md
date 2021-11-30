@@ -1,6 +1,6 @@
 # foodgram-project   
 
-Ссылка на сайт https://diplom-vadimegorov-programmer.tk/
+Ссылка на сайт https://diplom-vadimegorov-programmer.tk/ (отключил)
 
 ## Description
 
